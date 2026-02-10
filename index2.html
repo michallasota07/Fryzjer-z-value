@@ -1,0 +1,44 @@
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fryzjer</title>
+    <style>
+      table,
+      td,
+      tr {
+        border: solid 1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="radio" id="cena1" value="25" name="1" /> Krótkie
+    <input type="radio" id="cena2" value="30" name="1" /> Średnie
+    <input type="radio" id="cena3" value="40" name="1" /> Półdługie
+    <input type="radio" id="cena4" value="50" name="1" /> Długie
+    <input type="submit" value="Oblicz promocję" onclick="sprawdz()" />
+    <div id="wynik"></div>
+    <script>
+      function sprawdz() {
+        let liczba = document.getElementById("cena1").checked;
+        let liczba2 = document.getElementById("cena2").checked;
+        let liczba3 = document.getElementById("cena3").checked;
+        let liczba4 = document.getElementById("cena4").checked;
+
+        let cena = 0;
+        if (liczba) {
+          cena = cena1.value;
+        } else if (liczba2) {
+          cena = cena2.value;
+        } else if (liczba3) {
+          cena = cena3.value;
+        } else if (liczba4) {
+          cena = cena4.value;
+        }
+        let promocja = cena - 10;
+
+        document.getElementById("wynik").innerHTML =
+          "Cena po promocji: " + promocja + " zł";
+      }
+    </script>
+  </body>
+</html>
